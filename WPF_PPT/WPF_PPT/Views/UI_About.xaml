@@ -1,0 +1,79 @@
+﻿<Window x:Class="WPF_PPT.Views.UI_About"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_PPT.Views"
+        mc:Ignorable="d"
+        Title="UI_Attribute" Height="450" Width="800" WindowStyle="None" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen" AllowsTransparency="True" Background="Transparent">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Assets/Styles/DefaultStyle.xaml">
+
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Border Background="White" CornerRadius="10 10 10 10" Margin="6">
+        <Border.Effect>
+            <DropShadowEffect ShadowDepth="1" Color="Gray" BlurRadius="4"/>
+        </Border.Effect>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1.5*"/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0" CornerRadius="10,0,0,10" MouseLeftButtonDown="MoveWindow">
+                <Border.Background>
+                    <ImageBrush ImageSource="../Images/背景_枫叶.png" Stretch="UniformToFill" Opacity="0.85" />
+                </Border.Background>
+                <Border>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1.5*"/>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="0.7*"/>
+                        </Grid.RowDefinitions>
+                        <Image Grid.Row="1" Source="../Images/黑天鹅.png"/>
+                        <TextBlock Grid.Row="2" TextWrapping="Wrap" FontWeight="Normal" FontSize="28" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"
+                        Text="Firebug"/>
+                        
+                    </Grid>
+                    
+                </Border>
+                
+            </Border>
+            <Border Grid.Column="1" CornerRadius="0,10,10,0">
+                <Border.Background>
+                    <ImageBrush ImageSource="../Images/背景_长椅.png" Stretch="UniformToFill" Opacity="0.4" />
+                </Border.Background>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="0.3*"/>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock TextWrapping="Wrap" Margin="10 30 10 0" Grid.Row="0" FontWeight="Normal" FontSize="24"
+                        Text="Demo Program"/>
+                    <TextBlock TextWrapping="Wrap" Margin="10" Grid.Row="2" FontWeight="Light" FontSize="16"
+                        Text="这是一个基于.Net开发的类PPT程序，MVVM开发模式，所有背景素材均为个人摄影作品。用到的开源库：&#x0a;WPFDevelopers"/>
+                    
+
+                    <Button x:Name="btn_github" Grid.Row="3"
+                            Template="{StaticResource btn_style_sidebar}" 
+                            Content="&#xe603;" Opacity="1" Foreground="Gray"
+                            HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                            FontSize="28" Margin="0 0 10 10" Click="btn_github_Click">        
+                    </Button>
+
+                </Grid>
+            </Border>
+
+        </Grid>
+    </Border>
+</Window>
